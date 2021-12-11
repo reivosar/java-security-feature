@@ -21,8 +21,6 @@ curl -X POST -d 'p=${java:version}' localhost:8080/v1
 ```
 The following is output to the application log
 
-VERSION_2_6_1 Java version 11.0.12
-
 <pre>
 VERSION_1_2_17 ${java:version}
 VERSION_1_2_17 Parameter[param=${java:version}]
