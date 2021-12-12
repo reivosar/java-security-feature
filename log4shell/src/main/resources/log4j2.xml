@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE project>
 <Configuration status="off">
-
-    <!-- Propertiesは、nameの値を変数として使える -->
     <Properties>
         <Property name="console_format">%d{yyyy/MM/dd HH:mm:ss.SSS} [%t] %-6p %c{10} %m%n</Property>
     </Properties>
 
     <Appenders>
-        <!-- コンソールに出力する設定 -->
         <Console name="Console" target="SYSTEM_OUT">
             <PatternLayout>
                 <pattern>${console_format}</pattern>
@@ -17,7 +14,6 @@
     </Appenders>
 
     <Loggers>
-        // trace以上のログを出力する
         <Root level="info">
             <AppenderRef ref="Console" />
         </Root>
