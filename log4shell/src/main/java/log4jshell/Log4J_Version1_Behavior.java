@@ -3,9 +3,9 @@ package log4jshell;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
-class Log4J_1_2_17_Behavior extends Log4JBehavior {
+class Log4J_Version1_Behavior extends Log4JBehavior {
     
-    private static final Logger LOGGER = LogManager.getLogger("VERSION_1_2_17");
+    private static final Logger LOGGER = LogManager.getLogger("log4j");
     
     @Override
     void log(String param) {

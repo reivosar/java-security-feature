@@ -22,8 +22,8 @@ curl -X POST -d 'p=${java:version}' localhost:8080/v1
 The following is output to the application log
 
 <pre>
-VERSION_1_2_17 ${java:version}
-VERSION_1_2_17 Parameter[param=${java:version}]
+log4j ${java:version}
+log4j Parameter[param=${java:version}]
 </pre>
 
 - ### log4j2(2.6.1)
@@ -33,8 +33,8 @@ curl -X POST -d 'p=${java:version}' localhost:8080/v2
 The following is output to the application log
 
 <pre>
-VERSION_2_6_1 Java version 11.0.12
-VERSION_2_6_1 Parameter[param=Java version 11.0.12]
+log4j2 Java version 11.0.12
+log4j2 Parameter[param=Java version 11.0.12]
 </pre>
 
 ***The "java -version" has been executed.***
@@ -53,3 +53,21 @@ implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '
 ```
 
 *There are other options, of course. However, you should always keep the library you are using up to date.
+
+## Running the bug fixed application
+
+```
+gradlew build -b build_resoleved.gradle
+docker build . -t log4shell-app
+docker run -p 8080:8080 log4shell-app
+```
+- ### log4j2(2.15.0)
+```
+curl -X POST -d 'p=${java:version}' localhost:8080/v2
+```
+The following is output to the application log
+
+<pre>
+log4j2 ${java:version}
+log4j2 Parameter[param=${java:version}]
+</pre>

@@ -3,9 +3,9 @@ package log4jshell;
 import java.util.Arrays;
 
 enum Log4JVersion {
-    VERSION_1_2_17("1.2.17", new Log4J_1_2_17_Behavior()),
-    VERSION_2_6_1("2.6.1", new Log4J_2_6_1_Behavior()),
-    NONE(null, new Log4J_2_6_1_Behavior());
+    VERSION_1("1", new Log4J_Version1_Behavior()),
+    VERSION_2("2", new Log4J_Version2_Behavior()),
+    ;
     
     private final String version;
     
@@ -24,7 +24,7 @@ enum Log4JVersion {
     static Log4JVersion versionOf(String version) {
         return Arrays.stream(values())
                 .filter(e -> e.version.equals(version))
-                .findFirst().orElse(NONE);
+                .findFirst().orElse(VERSION_2);
     }
     
     @Override
