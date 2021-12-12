@@ -43,7 +43,7 @@ log4j2 Parameter[param=Java version 11.0.12]
 
 As you can see from the above results, in the case of log4j2, when outputting strings to the log, the specified process is executed. This is a serious bug. At the very least, the "ldap" or "java" command will be executed, and depending on the contents, it can cause serious damage. This should be addressed as soon as possible.
 
-## How to respond?
+## How to resolve?
 
 ***Version Up***
 
