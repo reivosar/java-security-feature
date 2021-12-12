@@ -48,9 +48,13 @@ As you can see from the above results, in the case of log4j2, when outputting st
 ***Version Up***
 
 ```
-// https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core
-implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.15.0'
+ext['log4j2.version'] = '2.15.0'
+
+dependencies {
+    implementation(platform("org.apache.logging.log4j:log4j-bom:2.15.0"))
+}
 ```
+***SEE build_resoleved.gradle***
 
 *There are other options, of course. However, you should always keep the library you are using up to date.
 
