@@ -62,8 +62,8 @@ dependencies {
 
 ```
 gradlew build -b build_resoleved.gradle
-docker build . -t log4shell-app
-docker run -p 8080:8080 log4shell-app
+docker build . -t log4shell-resolved-app
+docker run -p 8080:8080 log4shell-resolved-app
 ```
 - ### log4j2(2.15.0)
 ```
